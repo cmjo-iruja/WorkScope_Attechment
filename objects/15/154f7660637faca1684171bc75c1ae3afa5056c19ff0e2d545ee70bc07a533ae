@@ -1,0 +1,44 @@
+● Action Log 수정 필요
+- Gate Open & Pin Down 상태에서부터 시작
+- Pin & Fork 위치별 재정의 필요(Pin Up, Pin Middle, Pin Down, Fork Hold, Fork Release 등..)
+- Fork 회전과 Pin Up이 개별일 경우 분리해서 Action Log에 기록 필요
+- Gate Valve Close/Open, Door Valve Close/Open 세부 구분 필요(Up, Push, Down 등)
+- LL Component In Start는 Index측 H/S 신호 Start시점에 On, LL Component In End는 Index측 H/S Complete 신호 Off 시점에 On
+- A : Front, B : Rear로 명칭 변경
+- PM쪽 Process Step 세부 구분 필요(PLC Address Map 확인)
+- Scan Process 시작 Start End 추가 필요
+- Scan Count 관련 Action Log Count별 구분 필요
+  ex) MASK_SHUTTLE_FWD_MOVE_1_A(B), MASK_SHUTTLE_BWD_MOVE_1_A(B), 
+      MASK_SHUTTLE_FWD_MOVE_2_A(B), MASK_SHUTTLE_BWD_MOVE_2_A(B),
+      MASK_SHUTTLE_FWD_MOVE_3_A(B), MASK_SHUTTLE_BWD_MOVE_3_A(B),
+      MASK_SHUTTLE_FWD_MOVE_4_A(B), MASK_SHUTTLE_BWD_MOVE_4_A(B),
+      MASK_SHUTTLE_FWD_MOVE_5_A(B), MASK_SHUTTLE_BWD_MOVE_5_A(B),
+      MASK_SHUTTLE_FWD_MOVE_6_A(B), MASK_SHUTTLE_BWD_MOVE_6_A(B),
+      ː
+      ː(해당 값 Max 수치는 추후 MCC부서에서 제공 예정)
+- Init에 구동부 원점 Sequence 추가 필요
+  INIT_구동네임
+  
+● Signal Log 수정 필요
+- Pin은 Busy신호 추가, Fork는 Y출력 추가
+- 뒤의 PM01 있는 부분 PM01 명칭만 제거 필요
+
+● Information Log 수정 필요
+- Pin SET값 추가 필요(Speed, Load, Posi)
+  명칭 ex) SET_LIFT_PIN_M11_SPEED
+- 명칭에 crrnt 넣을 필요 없음, 명칭 앞에 SET이 없으면 현재 값
+- 단위는 특수문자 넣지 말것(% → percent)
+- 기록 시간 수정 필요(1~60s, GUI구현)
+
+
+이번주중에 LIST 수정해서 송부할것(반입(04/05)전까지 LIST 확정 필요, 2~3회 정도는 평균 피드백 진행함)
+MCC CHECK는 바로 송부 예정(받으면 설비 PC에 바로 설치 필요)
+
+추후 MCC Qual 진행시
+Chart에 대한 정합성까지 맞아야 Qual 종료(Chart 사용법은 메뉴얼에 있음)
+
+- MCC Report Mode 명칭 수정 MCC FTP USE
+
+
+MCC FTP ON/OFF, MCC LOG ON/OFF, MCC IP 설정등 메뉴얼 제공 필요
+- STEPID, GLASSID, LOTID, HOSTPPID 없을때는 Blank
